@@ -41,7 +41,7 @@ public protocol GymfileProtocol: AnyObject {
     /// Should the ipa file include bitcode?
     var includeBitcode: Bool? { get }
 
-    /// Method used to export the archive. Valid values are: app-store, validation, ad-hoc, package, enterprise, development, developer-id and mac-application
+    /// Method used to export the archive. Valid values are: app-store, validation, release-testing, package, enterprise, development, developer-id and mac-application
     var exportMethod: String? { get }
 
     /// Path to an export options plist or a hash with export options. Use 'xcodebuild -help' to print the full set of available options

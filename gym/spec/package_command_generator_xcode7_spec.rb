@@ -118,9 +118,9 @@ describe Gym do
           'displayImageURL' => 'https://www.example.com/display.png',
           'fullSizeImageURL' => 'https://www.example.com/fullSize.png'
         },
-        'method' => 'ad-hoc'
+        'method' => 'release-testing'
       })
-      expect(Gym.config[:export_method]).to eq("ad-hoc")
+      expect(Gym.config[:export_method]).to eq("release-testing")
       expect(Gym.config[:include_symbols]).to be_nil
       expect(Gym.config[:include_bitcode]).to be_nil
       expect(Gym.config[:export_team_id]).to be_nil
@@ -212,14 +212,14 @@ describe Gym do
     end
 
     it "doesn't store bitcode/symbols information for non app-store builds" do
-      options = { project: "./gym/examples/standard/Example.xcodeproj", export_method: 'ad-hoc' }
+      options = { project: "./gym/examples/standard/Example.xcodeproj", export_method: 'release-testing' }
       Gym.config = FastlaneCore::Configuration.create(Gym::Options.available_options, options)
 
       result = Gym::PackageCommandGeneratorXcode7.generate
       config_path = Gym::PackageCommandGeneratorXcode7.config_path
 
       expect(Plist.parse_xml(config_path)).to eq({
-        'method' => "ad-hoc"
+        'method' => "release-testing"
       })
     end
 

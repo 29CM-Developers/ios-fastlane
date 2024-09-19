@@ -256,9 +256,9 @@ module Gym
             "in-house" => "enterprise",
             "in house" => "enterprise",
             "inhouse" => "enterprise",
-            "ad-hoc" => "ad-hoc",
-            "adhoc" => "ad-hoc",
-            "ad hoc" => "ad-hoc",
+            "release-testing" => "release-testing",
+            "releasetesting" => "release-testing",
+            "release testing" => "release-testing",
             "development" => "development"
           }
 

@@ -14,7 +14,7 @@ describe Gym::CodeSigningMapping do
 
     it "Strips out all the usual characters that are not needed" do
       csm = Gym::CodeSigningMapping.new(project: nil)
-      return_value = csm.app_identifier_contains?("Ad-HocValue", "ad-hoc")
+      return_value = csm.app_identifier_contains?("Ad-HocValue", "release-testing")
       expect(return_value).to eq(true)
     end
 
@@ -130,7 +130,7 @@ describe Gym::CodeSigningMapping do
         it "should prefer the secondary mapping" do
           result = csm.merge_profile_mapping(primary_mapping: { "identifier.1" => "Ap-p StoreValue1" },
                                          secondary_mapping: { "identifier.1" => "Ad-HocValue" },
-                                             export_method: "ad-hoc")
+                                             export_method: "release-testing")
 
           expect(result).to eq({ "identifier.1": "Ad-HocValue" })
         end
