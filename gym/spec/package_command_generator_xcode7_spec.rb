@@ -100,7 +100,7 @@ describe Gym do
       config_path = Gym::PackageCommandGeneratorXcode7.config_path
 
       expect(Plist.parse_xml(config_path)).to eq({
-        'method' => "app-store"
+        'method' => "app-store-connect"
       })
     end
 
@@ -141,14 +141,14 @@ describe Gym do
 
       content = Plist.parse_xml(config_path)
       expect(content["include_symbols"]).to eq(true)
-      expect(content["method"]).to eq('app-store')
+      expect(content["method"]).to eq('app-store-connect')
     end
 
     it "reads user export plist and override some parameters" do
       options = {
         project: "./gym/examples/standard/Example.xcodeproj",
         export_options: "./gym/examples/standard/ExampleExport.plist",
-        export_method: "app-store",
+        export_method: "app-store-connect",
         include_symbols: false,
         include_bitcode: true,
         export_team_id: "1234567890"
@@ -165,7 +165,7 @@ describe Gym do
           'displayImageURL' => 'https://www.example.com/display.png',
           'fullSizeImageURL' => 'https://www.example.com/fullSize.png'
         },
-        'method' => 'app-store',
+        'method' => 'app-store-connect',
         'uploadSymbols' => false,
         'uploadBitcode' => true,
         'teamID' => '1234567890'
@@ -187,7 +187,7 @@ describe Gym do
           uploadBitcode: true,
           teamID: "1234567890"
         },
-        export_method: "app-store",
+        export_method: "app-store-connect",
         include_symbols: true,
         include_bitcode: false,
         export_team_id: "ASDFGHJK"
@@ -204,7 +204,7 @@ describe Gym do
           'displayImageURL' => 'https://www.example.com/display%20image.png',
           'fullSizeImageURL' => 'https://www.example.com/fullSize%20image.png'
         },
-        'method' => 'app-store',
+        'method' => 'app-store-connect',
         'uploadSymbols' => true,
         'uploadBitcode' => false,
         'teamID' => 'ASDFGHJK'
