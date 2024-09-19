@@ -33,11 +33,11 @@ describe Fastlane do
           expect(Fastlane::Actions.lane_context[Fastlane::Actions::SharedValues::SIGH_PROFILE_TYPE]).to eq("development")
         end
 
-        it "ad-hoc" do
+        it "release-testing" do
           Fastlane::FastFile.new.parse("lane :test do
             sigh(adhoc: true)
           end").runner.execute(:test)
-          expect(Fastlane::Actions.lane_context[Fastlane::Actions::SharedValues::SIGH_PROFILE_TYPE]).to eq("ad-hoc")
+          expect(Fastlane::Actions.lane_context[Fastlane::Actions::SharedValues::SIGH_PROFILE_TYPE]).to eq("release-testing")
         end
 
         it "enterprise" do

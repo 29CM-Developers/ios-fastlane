@@ -128,7 +128,7 @@ describe Fastlane do
           archive_path: './build-dir/MyApp.xcarchive',
           export_archive: true,
           export_options_plist: {
-            method: \"ad-hoc\",
+            method: \"release-testing\",
             thinning: \"<thin-for-all-variants>\",
             teamID: \"1234567890\",
             manifest: {
@@ -159,7 +159,7 @@ describe Fastlane do
           archive_path: './build-dir/MyApp.xcarchive',
           export_archive: true,
           export_options_plist: {
-            method: \"ad-hoc\",
+            method: \"release-testing\",
             thinning: \"<thin-for-all-variants>\",
             teamID: \"1234567890\",
           }

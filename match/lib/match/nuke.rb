@@ -108,7 +108,7 @@ module Match
         UI.error("---")
         UI.error("⚠️ Warning: This seems to be an Enterprise account!")
         unless self.safe_remove_certs
-          UI.error("By nuking your account's distribution, all your apps deployed via ad-hoc will stop working!") if type == "distribution"
+          UI.error("By nuking your account's distribution, all your apps deployed via release-testing will stop working!") if type == "distribution"
           UI.error("By nuking your account's enterprise, all your in-house apps will stop working!") if type == "enterprise"
         end
         UI.error("---")

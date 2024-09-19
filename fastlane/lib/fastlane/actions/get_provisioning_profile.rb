@@ -39,7 +39,7 @@ module Fastlane
 
       def self.set_profile_type(values, enterprise)
         profile_type = "app-store"
-        profile_type = "ad-hoc" if values[:adhoc]
+        profile_type = "release-testing" if values[:adhoc]
         profile_type = "development" if values[:development]
         profile_type = "developer-id" if values[:developer_id]
         profile_type = "enterprise" if enterprise
@@ -64,7 +64,7 @@ module Fastlane
           ['SIGH_PROFILE_PATHS', 'Paths in which certificates, key and profile are exported'],
           ['SIGH_UUID', 'UUID (Universally Unique IDentifier) of a provisioning profile'],
           ['SIGH_NAME', 'The name of the profile'],
-          ['SIGH_PROFILE_TYPE', 'The profile type, can be app-store, ad-hoc, development, enterprise, developer-id, can be used in `build_app` as a default value for `export_method`']
+          ['SIGH_PROFILE_TYPE', 'The profile type, can be app-store, release-testing, development, enterprise, developer-id, can be used in `build_app` as a default value for `export_method`']
         ]
       end
 

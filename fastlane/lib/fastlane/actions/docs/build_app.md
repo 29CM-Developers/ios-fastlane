@@ -95,7 +95,7 @@ fastlane gym --verbose
 Set the right export method if you're not uploading to App Store or TestFlight:
 
 ```no-highlight
-fastlane gym --export_method ad-hoc
+fastlane gym --export_method release-testing
 ```
 
 To pass boolean parameters make sure to use _gym_ like this:
@@ -135,7 +135,7 @@ or you can provide hash of values directly in the `Gymfile`:
 
 ```ruby-skip-tests
 export_options({
-  method: "ad-hoc",
+  method: "release-testing",
   manifest: {
     appURL: "https://example.com/My App.ipa",
   },

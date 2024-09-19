@@ -24,7 +24,7 @@ module Fastlane
 
       def self.define_profile_type(params)
         profile_type = "app-store"
-        profile_type = "ad-hoc" if params[:type] == 'adhoc'
+        profile_type = "release-testing" if params[:type] == 'adhoc'
         profile_type = "development" if params[:type] == 'development'
         profile_type = "enterprise" if params[:type] == 'enterprise'
 
@@ -82,7 +82,7 @@ module Fastlane
       def self.output
         [
           ['MATCH_PROVISIONING_PROFILE_MAPPING', 'The match provisioning profile mapping'],
-          ['SIGH_PROFILE_TYPE', 'The profile type, can be app-store, ad-hoc, development, enterprise, can be used in `build_app` as a default value for `export_method`']
+          ['SIGH_PROFILE_TYPE', 'The profile type, can be app-store, release-testing, development, enterprise, can be used in `build_app` as a default value for `export_method`']
         ]
       end
 
