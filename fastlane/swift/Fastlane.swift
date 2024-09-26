@@ -5655,7 +5655,7 @@ public func gradle(task: OptionalConfigValue<String?> = .fastlaneDefault(nil),
    - skipPackagePkg: Should we skip packaging the pkg?
    - includeSymbols: Should the ipa file include symbols?
    - includeBitcode: Should the ipa file include bitcode?
-   - exportMethod: Method used to export the archive. Valid values are: app-store, validation, release-testing, package, enterprise, development, developer-id and mac-application
+   - exportMethod: Method used to export the archive. Valid values are: app-store-connect, validation, release-testing, package, enterprise, development, developer-id and mac-application
    - exportOptions: Path to an export options plist or a hash with export options. Use 'xcodebuild -help' to print the full set of available options
    - exportXcargs: Pass additional arguments to xcodebuild for the package phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"
    - skipBuildArchive: Export ipa from previously built xcarchive. Uses archive_path as source

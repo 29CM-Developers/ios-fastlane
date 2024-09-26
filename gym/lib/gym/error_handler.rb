@@ -249,9 +249,9 @@ module Gym
           # the provisioning profile might be called anything below
           # There is no 100% good way to detect the profile type based on the name
           available_export_types = {
-            "app-store" => "app-store",
-            "app store" => "app-store",
-            "appstore" => "app-store",
+            "app-store-connect" => "app-store-connect",
+            "app store connect" => "app-store-connect",
+            "appstore connect" => "app-store-connect",
             "enterprise" => "enterprise",
             "in-house" => "enterprise",
             "in house" => "enterprise",
