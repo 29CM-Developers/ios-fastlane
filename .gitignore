@@ -80,3 +80,7 @@ xcuserdata/
 
 # Dotenv
 .env
+
+# macOS
+.build
+.index-build
