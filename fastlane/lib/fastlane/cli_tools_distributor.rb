@@ -123,7 +123,8 @@ module Fastlane
           Fastlane::CommandsGenerator.start
         end
       ensure
-        FastlaneCore::UpdateChecker.show_update_status('fastlane', Fastlane::VERSION)
+        # Workflow 에서 계속 오류가 나 주석처리
+        # FastlaneCore::UpdateChecker.show_update_status('fastlane', Fastlane::VERSION)
       end
 
       def map_aliased_tools(tool_name)
